@@ -1,0 +1,19 @@
+<app-item-list [items]="carsCollection" title="Cars"> </app-item-list>
+
+<input
+  type="text"
+  placeholder="Type car brand..."
+  [formControl]="newCarControl"
+/>
+
+<button
+  [disabled]="newCarControl.invalid"
+  (click)="addCar(newCarControl.value)"
+>
+  Add
+</button>
+
+<div *ngIf="isSuccessMessageShown" class="success-msg">
+  A new car has been added successfully! (I should disappear in
+  {{ MESSAGE_TIMEOUT_MS / 1000 }} sec.)
+</div>
