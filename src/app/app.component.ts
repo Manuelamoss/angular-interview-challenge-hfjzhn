@@ -29,9 +29,9 @@ export class AppComponent {
 
   public addCar(brand: string) {
     this.carsCollection.push({ name: brand });
-
+    //create a new reference and will assign to existing carsCollection array.
+    this.carsCollection = [...this.carsCollection];
     this.newCarControl.reset();
-    console.log(this.carsCollection);
 
     this._showSuccessMessage();
   }
